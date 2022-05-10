@@ -39,7 +39,9 @@ That is Ember telling you that it has created:
 
 <h1>People Tracker</h1>
 {{outlet}}
-what about the {{outlet}}
+
+
+what about the {{outlet}}? 
 
 The {{outlet}} in the main app is the content of route beneath. nicly expained:
 Let’s say your app displayed lists of books or movies, and the user can click on a title to view details of a specific book or movie. 
@@ -62,4 +64,26 @@ Each of those lists could in turn have their own {{outlet}} into which their res
 
 Have a look here for some more examples. Keep in mind this post is a bit old so there may be some outdated info.
 
+
+UI component - user interface 
+
+User interface (UI) elements are the parts we use to build apps or websites. They add interactivity to a user interface, 
+providing touchpoints for the user as they navigate their way around; 
+think buttons, scrollbars, menu items and checkboxes.
+
+
+ember generate component people-list
+
+
+Note that we've changed the title from a hard-coded string ("List of Scientists") to {{@title}}. 
+The @ indicates that @title is an argument that will be passed into the component, 
+which makes it easier to reuse the same component in other parts of the app we are building.
+
+Our component is called <PeopleList>, based on its name on the file system. 
+Please note that the letters P and L are capitalized.
+
+A component's name is derived from its file name. We capitalize the first letter and every letter after -, 
+then remove the hyphens. This is known as pascal case. 
+
+people-list -> <PeopleList>
 
