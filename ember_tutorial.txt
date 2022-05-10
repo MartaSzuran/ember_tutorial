@@ -1,0 +1,65 @@
+Ember tutorial from : https://guides.emberjs.com/release/getting-started/quick-start/
+
+npm install -g ember-cli
+
+Create new dir and set up a new Ember application inside of it:
+ember new ember-quickstart --lang en
+
+Application will include:
+
+   + A development server.
+   + Template compilation.
+   + JavaScript and CSS minification.
+   + Modern features via Babel.
+
+
+.hbs -> An HBS file is a template file created by Handlebars, a web template system. 
+	It contains a template written in HTML code and embedded with Handlebars expressions.
+
+Creating routes : For now, you can think of routes as being the different pages that make up 
+your application.
+
+ember generate route scientists
+
+installing route
+  create app/routes/scientists.js
+  create app/templates/scientists.hbs
+updating router
+  add route scientists
+installing route-test
+  create tests/unit/routes/scientists-test.js
+
+That is Ember telling you that it has created:
+
+    A template to be displayed when the user visits /scientists.
+    A Route object that fetches the model used by that template.
+    An entry in the application's router (located in app/router.js).
+    A unit test for this route.
+
+
+<h1>People Tracker</h1>
+{{outlet}}
+what about the {{outlet}}
+
+The {{outlet}} in the main app is the content of route beneath. nicly expained:
+Let’s say your app displayed lists of books or movies, and the user can click on a title to view details of a specific book or movie. 
+Your routes would probably look something like this:
+
+application
+
+    books [list books]
+        book [details for a specific book]
+
+    movies [list movies]
+        movie [movie details]
+
+The templates for the books & movies routes would be rendered where the {{outlet}} in the application template is located. 
+Each of those templates could have very different html, but both lists would be wrapped by the same html in the application template.
+
+Each of those lists could in turn have their own {{outlet}} into which their respective details routes (book & movie) templates would be rendered.
+
+(Or they could replace the lists entirely but that’s another story.)
+
+Have a look here for some more examples. Keep in mind this post is a bit old so there may be some outdated info.
+
+
