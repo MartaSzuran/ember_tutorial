@@ -87,3 +87,50 @@ then remove the hyphens. This is known as pascal case.
 
 people-list -> <PeopleList>
 
+----------
+ADDING SOME ACTION
+create in people-list button
+
+then in the same folder create .js file with the same name: people-list.js
+and add file:
+import Component from '@glimmer/component';
+import { action } from '@ember/object';
+
+export default class PeopleListComponent extends Component {
+  @action
+  showPerson(person) {
+    alert(`The person's name is ${person}!`);
+  }
+}
+
+
+<h2>{{@title}}</h2>
+
+<ul>
+  {{#each @people as |person|}}
+    <li>
+      <button type="button" {{on 'click' this.showPerson}}>{{person}}</button>
+      <button type="button" {{on 'click' (fn this.showPerson person)}}>{{person}}</button>
+    </li>
+  {{/each}}
+</ul>
+
+if we use {{on 'click' this.showPerson}} we will just concatenate action, to conotate person we need to take fn and person.
+
+--------------------------------
+Building For Production
+
+ember build --environment=production
+
+it will craete a dist with assets / index.html and robot
+
+The build command packages up all of the assets that make up your application—JavaScript, 
+templates, CSS, web fonts, images, and more.
+
+In this case, we told Ember to build for the production environment via the --environment flag. 
+This creates an optimized bundle that's ready to upload to your web host. Once the build finishes,
+ you'll find all of the concatenated and minified assets in your application's dist/ directory.
+
+------------------------------
+to biuld my app on apache server I will use plugins :
+ember install ember-cli-deploy
