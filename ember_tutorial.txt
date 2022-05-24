@@ -129,7 +129,7 @@ templates, CSS, web fonts, images, and more.
 
 In this case, we told Ember to build for the production environment via the --environment flag. 
 This creates an optimized bundle that's ready to upload to your web host. Once the build finishes,
- you'll find all of the concatenated and minified assets in your application's dist/ directory.
+you'll find all of the concatenated and minified assets in your application's dist/ directory.
 
 ------------------------------
 to biuld my app on apache server I will use plugins :
